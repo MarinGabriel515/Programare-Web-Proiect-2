@@ -1,0 +1,26 @@
+<form action="/rezultat-chestionar" method="post" target="_blank">
+    <% var indexIntrebari=1 %>
+    <% var indexVariante=1 %>
+    
+    <% var iteratorIntrebari %>
+    <% var iteratorVariante %>
+    
+    <% for (iteratorIntrebari of intrebari){%>
+        <% indexVariante=1 %>
+        <p><%=iteratorIntrebari.intrebare%></p>
+        <% for(iteratorVariante of iteratorIntrebari.variante) {%>
+            <% if(indexVariante==iteratorIntrebari.corect){%>
+            <input type="radio" id="RI<%=indexIntrebari%><%=indexVariante%>" name="RN<%=indexIntrebari%>" value="corect">
+            <label for="RI<%=indexIntrebari%><%=indexVariante%>"><%= iteratorVariante %></label>
+            
+            <% }else { %>
+                <input type="radio" id="RI<%=indexIntrebari%><%=indexVariante%>" name="RN<%=indexIntrebari%>" value="gresit">
+                <label for="RI<%=indexIntrebari%><%=indexVariante%>"><%= iteratorVariante %></label>
+                <% } %>
+    <% indexVariante+=1 } %>
+    
+    <% indexIntrebari+=1 } %>
+
+<input type="submit" value="Trimite"/>
+</form>
+

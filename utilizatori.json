@@ -1,0 +1,24 @@
+{
+	"Cont": [{
+			"utilizator": "test",
+			"parola": "test",
+			"nume": "test",
+			"prenume": "test",
+			"tipUser":"admin"
+			
+		},
+		{
+			"utilizator": "Gabi",
+			"parola": "Borcane",
+			"nume": "Marin",
+			"prenume": "Gabriel",
+			"tipUser":"normal"
+		}, {
+			"utilizator": "Igor",
+			"parola": "Putin",
+			"nume": "Putin",
+			"prenume": "Vladimir",
+			"tipUser":"normal"
+		}
+    ]
+}

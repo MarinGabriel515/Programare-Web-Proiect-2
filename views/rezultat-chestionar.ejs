@@ -1,0 +1,10 @@
+<%var obJSON=JSON.parse(data)%>
+
+<%var contor=0%>
+<%var C='corect'%>
+<% for(var iterator in obJSON){%>
+<%if(obJSON[iterator] == C){%>
+    <% contor+=1%>
+    <%}%>
+    <%}%>
+<p>Ai raspuns corect la <%= contor %> intrebari</p>

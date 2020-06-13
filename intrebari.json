@@ -1,0 +1,40 @@
+{
+    "Intrebari":[
+    {
+    "intrebare": "Sfantul pazitor al stundetilor este sfantul..",
+    "variante": ["Iosif", "5", "Gheorghe", "Vasile"],
+    "corect": 2
+    },
+    {
+        "intrebare": "Cate trupe canta in aceasta seara?",
+        "variante": ["2", "4", "3", "7"],
+        "corect": 3
+    },
+    {
+        "intrebare": "Care e produsul pe care il cauti?",
+        "variante": ["Laptop", "Telefon", "Televizor", "Consola"],
+        "corect": 3
+    },
+    {
+        "intrebare": "Numele celui de-al 37-lea presedinte american este:",
+        "variante": ["Trump", "Nixon", "Obama", "Lincoln"],
+        "corect": 2
+    },
+    {
+    "intrebare": "Mai fac restante?",
+    "variante": ["NU", "1", "Tot Nu", "Nein"],
+    "corect": 1
+    },
+    {
+        "intrebare": "Care e capitala Angliei?",
+        "variante": ["Londra", "Rusia", "Jupiter", "Africa"],
+        "corect": 1
+    },
+    {
+        "intrebare": "Ce este un pointer?",
+        "variante": ["Nu stiu", "Ceva abstract", "Varianta 1", "Varianta 2"],
+        "corect": 3
+    }
+]
+}
+

@@ -1,0 +1,80 @@
+<style>
+ input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: rgb(24, 122, 122);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: rgb(35, 219, 219);
+}
+
+h2
+{
+width: 100%;
+background-color: rgb(24, 122, 122);
+text-align: center;
+color: white;
+border: none;
+border-radius: 4px;
+
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 50%;
+  height: 50%;
+  margin: auto;
+  margin-top: 225px;
+}
+
+.eroare
+{
+width: 100%;
+background-color: rgb(216, 58, 58);
+text-align: center;
+color: white;
+border: none;
+border-radius: 4px;
+}
+</style>
+
+<div>
+<form action="/verificare-autentificare" method="post" target="_blank">
+    <h2>Autentificare</h2>
+    <input type="text" id="Nume" name="Nume"><br>
+    <input type="password" id="Parola" name="Parola"><br>
+    <input type="submit" value="Autentificare"/>
+
+    <%if (Eroare!=null){%>
+        <p class="eroare"><%=Eroare%></p>
+    <%}%>
+</form>
+</div>

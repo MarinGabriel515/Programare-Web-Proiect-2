@@ -1,0 +1,174 @@
+<style>
+
+
+#hideMe {
+    width: 100%;
+    background-color: rgb(28, 204, 51);
+    text-align: center;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: large;
+    margin: 5px;
+    -moz-animation: cssAnimation 0s ease-in 5s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 5s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 5s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        overflow:hidden;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+    }
+}
+
+
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    /* Float four columns side by side */
+    .column {
+      float: left;
+      width: 25%;
+      padding: 0 10px;
+    }
+    
+    /* Remove extra left and right margins, due to padding */
+    .row {margin: 0 -5px;}
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Responsive columns */
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+    
+    /* Style the counter cards */
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      padding: 16px;
+      margin: 10px;
+      text-align: center;
+      background-color: #f1f1f1;
+    }
+
+.logat
+{
+position: absolute;
+right : 10px;
+width: 25%;
+background-color:  rgb(24, 122, 122);
+text-align: center;
+color: white;
+border: none;
+border-radius: 4px;
+}
+
+
+button[type=submit] {
+  background-color: rgb(24, 122, 122);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+[type=submit].butonActiune {
+  background-color: rgb(24, 122, 122);
+  width: 12%;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+[type=submit].butonLogout {
+  background-color: rgb(24, 122, 24);
+  
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+[type=submit].butonActiuneCos {
+  background-color: rgb(24, 122, 122);
+  width: 12%;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+</style>
+
+<a id="linkAutentificare"href="http://localhost:6789/autentificare">Autentificare</a>
+<%if(Utilizator!=null){%>
+
+  <div id='hideMe'>Bine ai venit <%=Utilizator%></div>
+  <div class="logat">
+    <form action="/logout" method="get">
+        <p>Logat ca <%=Utilizator%></p>
+        <button type="submit" id="buttonDelogare" name="buttonDelogare" class="butonLogout" >Log Out</button>
+    </form>
+  </div>  
+
+
+<form action="/creare-bd" method="get">
+<button type="submit" class="butonActiune">Creare DB</button><br>
+<button type="submit" formaction="/inserare-bd" class="butonActiune">Incarcare DB</button>
+</form>
+
+
+<%if(Produse!=null){%>
+    <% var i%>
+    <% for(i=0;i< Produse.length;i++){ %>
+
+    <div class="column">
+        <div class="card">
+          <h3><%=Produse[i].numeProdus%></h3>
+          <p><%=Produse[i].pret%></p>
+          <form action="/adaugare_cos" method="post">
+            <button type="submit" id= <%= Produse[i].id %> name ="IdProdus" value=<%= Produse[i].id %> >Adauga in cos</button>
+        </form>
+        </div>
+      </div>
+
+      <%}%>
+    <%}%>
+    <form action="/vizualizeaza-cos" method="get">
+      <button type="submit" id="buttonVizualizareCos" class="butonActiuneCos" >Vizualizeaza Cos</button>
+    </form>
+<%}%>
